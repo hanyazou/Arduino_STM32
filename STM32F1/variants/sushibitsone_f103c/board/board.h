@@ -58,7 +58,7 @@
 #define BOARD_SPI2_MISO_PIN       PB14
 #define BOARD_SPI2_SCK_PIN        PB13
 
-#define BOARD_NR_GPIO_PINS        35
+#define BOARD_NR_GPIO_PINS        33
 #define BOARD_NR_PWM_PINS         12
 #define BOARD_NR_ADC_PINS          9
 #define BOARD_NR_USED_PINS         4
@@ -75,9 +75,10 @@
 
 // Note this needs to match with the PIN_MAP array in board.cpp
 enum {
-    PA0, PA1, PA2, PA3, PA4, PA5, PA6, PA7, PA8, PA9, PA10, PA11, PA12, PA13,PA14,PA15,
-	PB0, PB1, PB2, PB3, PB4, PB5, PB6, PB7, PB8, PB9, PB10, PB11, PB12, PB13,PB14,PB15,
-	PC13, PC14,PC15
+    PA10, PA9, PB12, PB13, PB14, PB15, PA8, PB4, PB5, PB6,
+    PB7, PB11, PB10, PB2, PC13, PA2,  PA1, PA3, PA4, PB0, 
+    PB1, PB9, PB8, PA5, PA6, PA7, PA0, PA11, PA12, PA13,
+    PB3, PA15,PA14, 
 };
 
 #endif

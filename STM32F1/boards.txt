@@ -164,6 +164,47 @@ nucleo_f103rb.menu.device_variant.NucleoF103_HSE=Nucleo F103 @ 72 MHz w/ crystal
 nucleo_f103rb.menu.device_variant.NucleoF103_HSE.build.f_cpu=72000000L
 nucleo_f103rb.menu.device_variant.NucleoF103_HSE.build.extra_flags=-DNUCLEO_HSE_CRYSTAL -DMCU_STM32F103RB -mthumb -march=armv7-m -D__STM32F1__
 
+###################### SushiBits One F103C ########################################
+
+sushibitsone_f103c.name=SushiBits One ISTM32F103C)
+sushibitsone_f103c.vid.0=0x1EAF
+sushibitsone_f103c.pid.0=0x0004
+sushibitsone_f103c.build.variant=sushibitsone_f103c
+sushibitsone_f103c.build.vect=VECT_TAB_ADDR=0x8000000
+sushibitsone_f103c.build.core=maple
+sushibitsone_f103c.build.board=SUSHIBITSONE_F103C
+sushibitsone_f103c.upload.use_1200bps_touch=false
+sushibitsone_f103c.upload.file_type=bin
+sushibitsone_f103c.upload.auto_reset=true
+
+sushibitsone_f103c.build.cpu_flags=-DMCU_STM32F103CB
+sushibitsone_f103c.build.ldscript=ld/jtag.ld
+sushibitsone_f103c.build.f_cpu=72000000L
+sushibitsone_f103c.upload.maximum_size=131072
+sushibitsone_f103c.upload.ram.maximum_size=20480
+sushibitsone_f103c.upload.flash.maximum_size=131072
+
+#---------------------------- UPLOAD METHODS ---------------------------
+
+sushibitsone_f103c.menu.upload_method.DFUUploadMethod=STM32duino bootloader
+sushibitsone_f103c.menu.upload_method.DFUUploadMethod.upload.protocol=maple_dfu
+sushibitsone_f103c.menu.upload_method.DFUUploadMethod.upload.tool=maple_upload
+sushibitsone_f103c.menu.upload_method.DFUUploadMethod.build.upload_flags=-DSERIAL_USB -DGENERIC_BOOTLOADER
+sushibitsone_f103c.menu.upload_method.DFUUploadMethod.build.vect=VECT_TAB_ADDR=0x8002000
+sushibitsone_f103c.menu.upload_method.DFUUploadMethod.build.ldscript=ld/bootloader_20.ld
+sushibitsone_f103c.menu.upload_method.DFUUploadMethod.upload.usbID=1EAF:0003
+sushibitsone_f103c.menu.upload_method.DFUUploadMethod.upload.altID=2
+
+sushibitsone_f103c.menu.upload_method.STLinkMethod=STLink
+sushibitsone_f103c.menu.upload_method.STLinkMethod.upload.protocol=STLink
+sushibitsone_f103c.menu.upload_method.STLinkMethod.upload.tool=stlink_upload
+sushibitsone_f103c.menu.upload_method.STLinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB -DGENERIC_BOOTLOADER
+
+sushibitsone_f103c.menu.upload_method.jlinkMethod=JLink
+sushibitsone_f103c.menu.upload_method.jlinkMethod.upload.protocol=jlink
+sushibitsone_f103c.menu.upload_method.jlinkMethod.upload.tool=jlink_upload
+sushibitsone_f103c.menu.upload_method.jlinkMethod.build.upload_flags=-DCONFIG_MAPLE_MINI_NO_DISABLE_DEBUG=1 -DSERIAL_USB -DGENERIC_BOOTLOADER 
+
 ###################### Generic STM32F103C ########################################
 
 genericSTM32F103C.name=Generic STM32F103C series

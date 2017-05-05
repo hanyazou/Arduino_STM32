@@ -86,6 +86,10 @@ namespace wirish {
         __weak void board_setup_usb(void) {
 #ifdef SERIAL_USB
 			
+			// Enable USB D+ pullup resister to show presence of the board
+			gpio_set_mode(PIN_MAP[PC13].gpio_device, PIN_MAP[PC13].gpio_bit, GPIO_OUTPUT_PP);
+			gpio_write_bit(PIN_MAP[PC13].gpio_device, PIN_MAP[PC13].gpio_bit, 1);
+
 #ifdef GENERIC_BOOTLOADER			
 			//Reset the USB interface on generic boards - developed by Victor PV
 			gpio_set_mode(PIN_MAP[PA12].gpio_device, PIN_MAP[PA12].gpio_bit, GPIO_OUTPUT_PP);

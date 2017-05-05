@@ -17,6 +17,13 @@ static const uint8_t MOSI = BOARD_SPI1_MOSI_PIN;
 static const uint8_t MISO = BOARD_SPI1_MISO_PIN;
 static const uint8_t SCK  = BOARD_SPI1_SCK_PIN;
 
-#define LED_BUILTIN PC13
+static const uint8_t A0 = PA2;
+static const uint8_t A1 = PA1;
+static const uint8_t A2 = PA3;
+static const uint8_t A3 = PA4;
+static const uint8_t A4 = PB0;
+static const uint8_t A5 = PB1;
+
+#define LED_BUILTIN PB2
 
 #endif /* _VARIANT_ARDUINO_STM32_ */

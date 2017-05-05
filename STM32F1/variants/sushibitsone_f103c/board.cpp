@@ -55,44 +55,39 @@ void boardInit(void) {
 extern const stm32_pin_info PIN_MAP[BOARD_NR_GPIO_PINS] = {
 
 
-    {&gpioa, &timer2, &adc1,  0, 1,    0}, /* PA0 */
-    {&gpioa, &timer2, &adc1,  1, 2,    1}, /* PA1 */
-    {&gpioa, &timer2, &adc1,  2, 3,    2}, /* PA2 */	
-    {&gpioa, &timer2, &adc1,  3, 4,    3}, /* PA3 */
-    {&gpioa,   NULL, &adc1,  4, 0,    4}, /* PA4 */
-    {&gpioa,   NULL, &adc1,  5, 0,    5}, /* PA5 */
-    {&gpioa, &timer3, &adc1,  6, 1,    6}, /* PA6 */
-    {&gpioa, &timer3, &adc1,  7, 2,    7}, /* PA7 */
-    {&gpioa, &timer1, NULL,  8, 1, ADCx}, /* PA8 */	
-    {&gpioa, &timer1, NULL,  9, 2, ADCx}, /* PA9 */	
-    {&gpioa, &timer1, NULL, 10, 3, ADCx}, /* PA10 */
-    {&gpioa, &timer1, NULL, 11, 4, ADCx}, /* PA11 */
-    {&gpioa,   NULL, NULL, 12, 0, ADCx}, /* PA12 */	
-    {&gpioa,   NULL, NULL, 13, 0, ADCx}, /* PA13 */	
-    {&gpioa,   NULL, NULL, 14, 0, ADCx}, /* PA14 */
-    {&gpioa,   NULL, NULL, 15, 0, ADCx}, /* PA15 */
-	
-    {&gpiob, &timer3, &adc1,  0, 3,    8}, /* PB0 */	
-    {&gpiob, &timer3, &adc1,  1, 4,    9}, /* PB1 */
-    {&gpiob,   NULL, NULL,  2, 0, ADCx}, /* PB2 */
-    {&gpiob,   NULL, NULL,  3, 0, ADCx}, /* PB3 */
-    {&gpiob,   NULL, NULL,  4, 0, ADCx}, /* PB4 */
-    {&gpiob,   NULL, NULL,  5, 0, ADCx}, /* PB5 */
-    {&gpiob, &timer4, NULL,  6, 1, ADCx}, /* PB6 */
-    {&gpiob, &timer4, NULL,  7, 2, ADCx}, /* PB7 */	
-    {&gpiob, &timer4, NULL,  8, 3, ADCx}, /* PB8 */	
-    {&gpiob, &timer4, NULL,  9, 4, ADCx}, /* PB9 */	
-    {&gpiob,   NULL, NULL, 10, 0, ADCx}, /* PB10 */	
-    {&gpiob,   NULL, NULL, 11, 0, ADCx}, /* PB11 */
-    {&gpiob,   NULL, NULL, 12, 0, ADCx}, /* PB12 */
-    {&gpiob,   NULL, NULL, 13, 0, ADCx}, /* PB13 */
-    {&gpiob,   NULL, NULL, 14, 0, ADCx}, /* PB14 */
-    {&gpiob,   NULL, NULL, 15, 0, ADCx}, /* PB15 */
-
-    {&gpioc,   NULL, NULL, 13, 0, ADCx}, /* PC13 */	
-    {&gpioc,   NULL, NULL, 14, 0, ADCx}, /* PC14 */
-    {&gpioc,   NULL, NULL, 15, 0, ADCx}, /* PC15 */
-
+    {&gpioa, &timer1, NULL,  10, 3, ADCx}, // 0  D0    PA10
+    {&gpioa, &timer1, NULL,  9,  2, ADCx}, // 1  D1    PA9
+    {&gpiob, NULL,    NULL,  12, 0, ADCx}, // 2  D2    PB12
+    {&gpiob, NULL,    NULL,  13, 0, ADCx}, // 3  D3    PB13
+    {&gpiob, NULL,    NULL,  14, 0, ADCx}, // 4  D4    PB14
+    {&gpiob, NULL,    NULL,  15, 0, ADCx}, // 5  D5    PB15
+    {&gpioa, &timer1, NULL,  8,  1, ADCx}, // 6  D6    PA8
+    {&gpiob, NULL,    NULL,  4,  0, ADCx}, // 7  D7    PB4
+    {&gpiob, NULL,    NULL,  5,  0, ADCx}, // 8  D8    PB5
+    {&gpiob, &timer4, NULL,  6,  1, ADCx}, // 9  D9    PB6
+    {&gpiob, &timer4, NULL,  7,  2, ADCx}, // 10 D10   PB7
+    {&gpiob, NULL,    NULL,  11, 0, ADCx}, // 11 D11   PB11
+    {&gpiob, NULL,    NULL,  10, 0, ADCx}, // 12 D12   PB10
+    {&gpiob, NULL,    NULL,  2,  0, ADCx}, // 13 D13   PB2
+    {&gpioc, NULL,    NULL,  13, 0, ADCx}, // 14 D14   PC13
+    {&gpioa, &timer2, &adc1, 2,  3, 2   }, // 15 A0    PA2
+    {&gpioa, &timer2, &adc1, 1,  2, 1   }, // 16 A1    PA1
+    {&gpioa, &timer2, &adc1, 3,  4, 3   }, // 17 A2    PA3
+    {&gpioa, NULL,    &adc1, 4,  0, 4   }, // 18 A3    PA4
+    {&gpiob, &timer3, &adc1, 0,  3, 8   }, // 19 A4    PB0
+    {&gpiob, &timer3, &adc1, 1,  4, 9   }, // 20 A5    PB1
+    {&gpiob, &timer4, NULL,  9,  4, ADCx}, // 21 SDA   PB9
+    {&gpiob, &timer4, NULL,  8,  3, ADCx}, // 22 SDL   PB8
+    {&gpioa, NULL,    &adc1, 5,  0, 5   }, // 23 SCK   PA5
+    {&gpioa, &timer3, &adc1, 6,  1, 6   }, // 24 MISO  PA6
+    {&gpioa, &timer3, &adc1, 7,  2, 7   }, // 25 MOSI  PA7
+    {&gpioa, &timer2, &adc1, 0,  1, 0   }, // 26 WKUP  PA0
+    {&gpioa, &timer1, NULL,  11, 4, ADCx}, // 27 UD-   PA11
+    {&gpioa, NULL,    NULL,  12, 0, ADCx}, // 28 UD+   PA12
+    {&gpioa, NULL,    NULL,  13, 0, ADCx}, // 29 JTMS  PA13
+    {&gpiob, NULL,    NULL,  3,  0, ADCx}, // 30 JTDO  PB3
+    {&gpioa, NULL,    NULL,  15, 0, ADCx}, // 31 JTDI  PA15
+    {&gpioa, NULL,    NULL,  14, 0, ADCx}, // 32 JTCK  PA14
 
 
 };

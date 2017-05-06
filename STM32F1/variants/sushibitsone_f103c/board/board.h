@@ -61,14 +61,14 @@
 #define BOARD_NR_GPIO_PINS        33
 #define BOARD_NR_PWM_PINS         12
 #define BOARD_NR_ADC_PINS          9
-#define BOARD_NR_USED_PINS         4
+#define BOARD_NR_USED_PINS         7
 
 
-#define BOARD_JTMS_SWDIO_PIN      22
-#define BOARD_JTCK_SWCLK_PIN      21
-#define BOARD_JTDI_PIN            20
-#define BOARD_JTDO_PIN            19
-#define BOARD_NJTRST_PIN          18
+#define BOARD_JTMS_SWDIO_PIN      PA13
+#define BOARD_JTCK_SWCLK_PIN      PA14
+#define BOARD_JTDI_PIN            PA15
+#define BOARD_JTDO_PIN            PB3
+#define BOARD_NJTRST_PIN          PB4
 
 #define BOARD_USB_DISC_DEV        GPIOB
 #define BOARD_USB_DISC_BIT        10
